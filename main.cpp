@@ -2,13 +2,14 @@
 #include "include/imgui_impl_glfw.h"
 #include "include/imgui_impl_vulkan.h"
 #include "include/vulkan_setup.h"
+#include <GLFW/glfw3.h>
 #include <cmath>
 #include <cstdlib>
 #include <stdio.h>
 #include <stdlib.h>
+
 #define GLFW_INCLUDE_NONE
 #define GLFW_INCLUDE_VULKAN
-#include <GLFW/glfw3.h>
 
 int main(int, char **) {
   glfwSetErrorCallback(glfw_error_callback);
@@ -17,6 +18,7 @@ int main(int, char **) {
 
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
   glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
+  glfwWindowHint(GLFW_FLOATING, GLFW_TRUE);
 
   GLFWmonitor *primary_monitor = glfwGetPrimaryMonitor();
   const GLFWvidmode *mode = glfwGetVideoMode(primary_monitor);
