@@ -5,7 +5,7 @@ deps = [
   dependency('vulkan'),
 ]
 
-incdir = include_directories('include')
+include_dirs = include_directories('include')
 
 imgui_sources = files(
   'include/imgui.cpp',
@@ -21,6 +21,5 @@ executable(
   'main.cpp',
   imgui_sources,
   dependencies: deps,
-  include_directories: incdir
+  include_directories: include_dirs
 )
-
